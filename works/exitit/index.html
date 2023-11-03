@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Exit it!</title>
+
+    <style>
+        .navfont {
+            font-family: 'Play';
+        }
+
+        .logo {
+            text-align: center;
+            padding-top: 5em;
+            padding-bottom: 0.5em;
+        }
+
+        h1 {
+            font-family: 'Paytone One';
+            vertical-align: middle;
+            margin-left: 2em;
+            margin-right: 3em;
+            margin-bottom: 1em;
+            padding-top: 0.95em;
+            padding-left: 2.5em;
+            padding-bottom: 0.5em;
+            background-image: url('img/h.png');
+            background-position: 50px 50px;
+            background-repeat: no-repeat;
+        }
+
+        .contents {
+            font-family: 'Kosugi Maru';
+            font-size: 1.4em;
+            margin-left: 3em;
+            margin-right: 3em;
+            padding-bottom: 0.5em;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .container-right {
+            max-width: 50%;
+        }
+
+        .container-left {
+            flex: 1;
+            padding: 20px;
+            flex-flow: column;
+        }
+
+        .container-play-btn {
+            text-align: center;
+        }
+
+        .play-btn {
+            border: 0;
+            background-color: green;
+            width: 300px;
+            height: 60px;
+            margin: 50px;
+            color: white;
+            border-radius: 10px;
+            background-image: linear-gradient(to top left,
+                    rgba(0, 0, 0, 0.2),
+                    rgba(0, 0, 0, 0.2) 30%,
+                    rgba(0, 0, 0, 0));
+            box-shadow:
+                inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+                inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+        }
+
+        #navbarToggleExternalContent {
+            padding-top: 50px;
+        }
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body style="background-color:#a1ceb4;">
+    <!-- navbar -->
+    <nav class="navbar navbar-dark fixed-top navfont" style="background-color:#202020;">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0" style="font-size: 30px;">atsuto - works</span>
+
+            <!-- navbarの拡張表示ボタン -->
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <section id="body">
+        <!-- navbarの拡張表示 -->
+        <div class="collapse fixed-top" id="navbarToggleExternalContent" data-bs-theme="dark" style="z-index: 10;">
+            <div class="navfont p-4" style="background-color:#202020;">
+                <a href="../../index.html" style="font-size: 20px; text-decoration: none;"><span
+                    style="color: #a1a1a1;">portfolio</span></a><br>
+                <a href="https://github.com/atsuto820" style="font-size: 20px; text-decoration: none;"><span
+                    style="color: #a1a1a1;">github</span></a><br>
+                <a href="https://unityroom.com/users/sb2e78vz4xkyi5dhj9f3"
+                    style="font-size: 20px; text-decoration: none;"><span
+                    style="color: #a1a1a1;">Unityroom</span></a>
+            </div>
+        </div>
+
+        <div class="logo"><img src="img/logo.png"></div>
+
+        <h1 style="font-size: 64px; color:white;">GAME</h1>
+        <div class="contents">
+            <div class="container">
+                <div class="container-left">
+                    非常口マークを題材にランゲーム化しました。
+                    せまってくる炎から逃げつつ、障害物をよけてハイスコアを目指そう！
+                    このゲームの最大の特徴は3次元と2次元を切り替える次元切り替えです。
+                    視点を変えればコースも変わります。行き詰まった時は積極的に使っていきましょう。<br><br>
+
+                    このゲームは2023年度奈良高専祭(2023/11/04～2023/11/05)の展示物として作成した作品です。
+                    Unityroomでも公開しているのでぜひ遊んでみてください。<br><br>
+
+                    高専祭に展示しているものではスコア記録、ランキング表示機能を追加しており、
+                    高専祭2日間の間でハイスコアの人の名前が記録されます。
+                    <div class="container-play-btn">
+                        <button class="play-btn" onclick="location.href=''">Unityroomで遊ぶ</button>
+                    </div>
+                </div>
+                <div class="container-right">
+                    <video controls autoplay src="movie.mp4" width="576" height="360"></video>
+                </div>
+            </div>
+        </div>
+
+        <h1 style="font-size: 64px; color:white;">PROGRAM</h1>
+        <div class="contents">
+            このゲームはUnityを用いて作成されました。プロジェクトファイルは<a href="">こちらのGithubレポジトリ</a>で公開しています。<br>
+            3Dモデルや楽曲は自作です。
+        </div>
+
+        <a href="1day仕事体験作品提出シート_プログラマー.pdf" download="1day仕事体験作品提出シート_プログラマー.pdf">PDFファイルをダウンロード</a>
+    </section>
+</body>
