@@ -34,7 +34,7 @@
       margin: 3px auto;
     }
 
-    .container {
+    .body-container {
       display: flex;
       justify-content: space-between;
     }
@@ -46,21 +46,6 @@
     .text-container {
       flex: 1;
       padding: 20px;
-    }
-
-    .workbox-container {
-      display: flex;
-      margin-left: 3em;
-      margin-right: 3em;
-    }
-
-    .workbox {
-      flex-shrink: 0;
-      width: 300px;
-      height: 400px;
-      margin-right: 10px;
-      border-radius: 10px;
-      background-color: #ccc;
     }
 
     #back-canvas {
@@ -167,7 +152,7 @@
     <h1 id="skill">SKILL</h1>
     <h4>CREATE</h4>
     <div class="contents">
-      <div class="container">
+      <div class="body-container">
         <div class="chart-container">
           <canvas id="createChart" width="450" height="450"></canvas>
         </div>
@@ -182,7 +167,7 @@
 
     <h4>PROGRAMMING</h4>
     <div class="contents">
-      <div class="container">
+      <div class="body-container">
         <div class="chart-container">
           <canvas id="programmingChart" width="400" height="400"></canvas>
         </div>
@@ -198,13 +183,32 @@
     <script src="chart.js"></script>
 
     <h1 id="works">WORKS</h1>
-    <div class="contents">
-      <div class="workbox-container">
-        <div class="workbox"><a href="works/exitit/index.html"><img src="img/exitit.png" width="300" height="400"></a>
+    <div class="row row-cols-auto" style="margin-left: 3em; margin-right: 3em; margin-bottom: 3em;">
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="img/exitit.png" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Exit it!</h5>
+            <p class="card-text">せまってくる炎から逃げつつ、障害物をよけてハイスコアを目指すゲーム。</p>
+            <a href="https://github.com/atsuto820/Exit-it/releases/tag/v1.0" class="btn btn-primary">ダウンロード</a>
+            <a href="https://github.com/atsuto820/Exit-it" class="btn btn-primary">Github</a>
+            <a href="works/exitit/index.html" class="btn btn-primary" style="margin-top: 0.5em;">作品ページへ</a>
+          </div>
         </div>
-        <div class="workbox"><img src="img/syogi.png" width="300" height="400"></div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="img/syogi.png" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">大局将棋</h5>
+            <p class="card-text">江戸時代初期に考案された史上最大の将棋。</p>
+            <a href="https://atsuto820.github.io/TaikyokuShogi/" class="btn btn-primary">プレイ</a>
+          </div>
+        </div>
       </div>
     </div>
+    
+    
   </section>
 
 </body>
