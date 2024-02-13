@@ -1,214 +1,257 @@
 <!DOCTYPE html>
 
 <head>
-  <meta charset="utf-8" />
-  <title>atsuto Portfolio</title>
-  <style>
-    .navfont {
-      font-family: 'Play';
-    }
+    <meta charset="utf-8" />
+    <title>atsuto Portfolio</title>
 
-    h1 {
-      font-family: 'Paytone One';
-      text-align: center;
-      padding-top: 2em;
-      padding-bottom: 0.5em;
-    }
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru" rel="stylesheet" />
 
-    h4 {
-      font-family: 'Paytone One';
-      text-align: center;
-      padding-top: 0.2em;
-      padding-bottom: 0.5em;
-    }
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    .contents {
-      font-family: 'Kosugi Maru';
-      font-size: 1.4em;
-      margin-left: 3em;
-      margin-right: 3em;
-      padding-bottom: 0.5em;
-    }
+    <meta name="viewport" content="width=device-width">
 
-    canvas {
-      margin: 3px auto;
-    }
+    <style>
+        .navfont {
+            font-family: 'Play';
+        }
 
-    .body-container {
-      display: flex;
-      justify-content: space-between;
-    }
+        h1 {
+            font-family: 'Paytone One';
+            text-align: center;
+            padding-top: 100px;
+            padding-bottom: 0.5em;
+        }
 
-    .chart-container {
-      flex: 1;
-    }
+        h4 {
+            font-family: 'Paytone One';
+            text-align: center;
+            padding-top: 0.2em;
+            padding-bottom: 0.5em;
+        }
 
-    .text-container {
-      flex: 1;
-      padding: 20px;
-    }
+        .contents {
+            font-family: 'Kosugi Maru';
+            font-size: 1.4em;
+            margin-left: 3em;
+            margin-right: 3em;
+            padding-bottom: 0.5em;
+        }
 
-    #back-canvas {
-      position: fixed;
-    }
+        canvas {
+            margin: 3px auto;
+        }
 
-    #body {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
+        .body-container {
+            display: flex;
+            justify-content: space-between;
+        }
 
-    #navbarToggleExternalContent {
-      padding-top: 50px;
-    }
-  </style>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru" rel="stylesheet" />
+        .chart-container {
+            flex: 1;
+        }
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        .text-container {
+            flex: 1;
+            padding: 20px;
+        }
 
+        .card {
+            width: 18rem;
+            height: 25rem;
+            margin-bottom: 2em;
+        }
+
+        #back-canvas {
+            position: fixed;
+        }
+
+        #body {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #navbarToggleExternalContent {
+            padding-top: 50px;
+        }
+    </style>
 </head>
 
 <body>
-  <canvas id="back-canvas"></canvas>
-  <script src="background.js"></script>
+    <canvas id="back-canvas"></canvas>
+    <script src="background.js"></script>
 
-  <!-- navbar -->
-  <nav class="navbar navbar-dark fixed-top navfont" style="background-color:#202020;">
-    <div class="container-fluid">
-      <span class="navbar-brand mb-0" style="font-size: 30px;">atsuto - portfolio</span>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#profile">PROFILE</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#skill">SKILL</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#works">WORKS</a>
-          </li>
-        </ul>
-      </div>
+    <!-- navbar -->
+    <nav class="navbar navbar-dark fixed-top navfont" style="background-color:#202020;">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0" style="font-size: 30px;">atsuto - portfolio</span>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#profile">PROFILE</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skill">SKILL</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#works">WORKS</a>
+                    </li>
+                </ul>
+            </div>
 
-      <!-- navbarの拡張表示ボタン -->
-      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </nav>
-
-  <section id="body">
-    <!-- navbarの拡張表示 -->
-    <div class="collapse fixed-top" id="navbarToggleExternalContent" data-bs-theme="dark" style="z-index: 10;">
-      <div class="navfont p-4" style="background-color:#202020;">
-        <a href="" style="font-size: 20px; text-decoration: none;"><span
-            style="color: #a1a1a1;">portfolio</span></a><br>
-        <a href="https://github.com/atsuto820" style="font-size: 20px; text-decoration: none;"><span
-            style="color: #a1a1a1;">github</span></a><br>
-        <a href="https://unityroom.com/users/sb2e78vz4xkyi5dhj9f3" style="font-size: 20px; text-decoration: none;"><span
-            style="color: #a1a1a1;">Unityroom</span></a>
-      </div>
-    </div>
-
-    <h1 id="profile">PROFILE</h1>
-    <div class="contents">
-      <table class="table">
-        <tbody>
-          <tr>
-            <th scope="row">名前</th>
-            <td>atsuto</td>
-          </tr>
-          <tr>
-            <th scope="row">年齢</th>
-            <td>19歳 (高専4年生)</td>
-          </tr>
-          <tr>
-            <th scope="row">出身</th>
-            <td>奈良県</td>
-          </tr>
-          <tr>
-            <th scope="row">在籍校</th>
-            <td>奈良工業高等専門学校</td>
-          </tr>
-          <tr>
-            <th scope="row">趣味</th>
-            <td>ゲーム開発</td>
-          </tr>
-          <tr>
-            <th scope="row">目標</th>
-            <td>何でもできるプログラマー</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h1 id="skill">SKILL</h1>
-    <h4>CREATE</h4>
-    <div class="contents">
-      <div class="body-container">
-        <div class="chart-container">
-          <canvas id="createChart" width="450" height="450"></canvas>
+            <!-- navbarの拡張表示ボタン -->
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
-        <div class="text-container">
-          <p>
-            ゲームを開発していると画像やアニメーション、楽曲などが必要になりますが、私はフリーの素材を使うのが好きでないので、自作することが多いです。
+    </nav>
 
-          </p>
+    <section id="body">
+        <!-- navbarの拡張表示 -->
+        <div class="collapse fixed-top" id="navbarToggleExternalContent" data-bs-theme="dark" style="z-index: 10;">
+            <div class="navfont p-4" style="background-color:#202020;">
+                <a href="" style="font-size: 20px; text-decoration: none;"><span
+                        style="color: #a1a1a1;">portfolio</span></a><br>
+                <a href="https://github.com/atsuto820" style="font-size: 20px; text-decoration: none;"><span
+                        style="color: #a1a1a1;">github</span></a><br>
+                <a href="https://unityroom.com/users/sb2e78vz4xkyi5dhj9f3"
+                    style="font-size: 20px; text-decoration: none;"><span style="color: #a1a1a1;">Unityroom</span></a>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <h4>PROGRAMMING</h4>
-    <div class="contents">
-      <div class="body-container">
-        <div class="chart-container">
-          <canvas id="programmingChart" width="400" height="400"></canvas>
+        <h1 id="profile">PROFILE</h1>
+        <div class="contents">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row">名前</th>
+                        <td>atsuto</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">年齢</th>
+                        <td>19歳 (高専4年生)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">出身</th>
+                        <td>奈良県</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">在籍校</th>
+                        <td>奈良工業高等専門学校</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">趣味</th>
+                        <td>ゲーム開発</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">目標</th>
+                        <td>何でもできるプログラマー</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="text-container">
-          <p>
-            学校で幅広い言語を学ぶので大抵の言語は触れるようになりました。特にjavaとUnityでよく使っているC#は得意です。
-            javaは中学生のときに始めたので5年ほどは使っています。個人的にはC#が最も書きやすいと感じます。C言語は現在勉強中です。<br /><br />
-            ちなみにこれ以外にもアセンブリ言語やVerilogも勉強したことがありますが最近はほぼ使っていないので省略しました。
-          </p>
-        </div>
-      </div>
-    </div>
-    <script src="chart.js"></script>
 
-    <h1 id="works">WORKS</h1>
-    <div class="row row-cols-auto" style="margin-left: 3em; margin-right: 3em; margin-bottom: 3em;">
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img src="img/exitit.png" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Exit it!</h5>
-            <p class="card-text">せまってくる炎から逃げつつ、障害物をよけてハイスコアを目指すゲーム。</p>
-            <a href="https://github.com/atsuto820/Exit-it/releases/tag/v1.0" class="btn btn-primary">ダウンロード</a>
-            <a href="https://github.com/atsuto820/Exit-it" class="btn btn-primary">Github</a>
-            <a href="works/exitit/index.html" class="btn btn-primary" style="margin-top: 0.5em;">作品ページへ</a>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img src="img/syogi.png" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">大局将棋</h5>
-            <p class="card-text">江戸時代初期に考案された史上最大の将棋。</p>
-            <a href="https://atsuto820.github.io/TaikyokuShogi/" class="btn btn-primary">プレイ</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    
-  </section>
+        <h1 id="skill">SKILL</h1>
+        <h4>CREATE</h4>
+        <div class="contents">
+            <div class="body-container">
+                <div class="chart-container">
+                    <canvas id="createChart" width="450" height="450"></canvas>
+                </div>
+                <div class="text-container">
+                    <p>
+                        ゲームを開発していると画像やアニメーション、楽曲などが必要になりますが、私はフリーの素材を使うのが好きでないので、自作することが多いです。
 
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <h4>PROGRAMMING</h4>
+        <div class="contents">
+            <div class="body-container">
+                <div class="chart-container">
+                    <canvas id="programmingChart" width="400" height="400"></canvas>
+                </div>
+                <div class="text-container">
+                    <p>
+                        学校で幅広い言語を学ぶので大抵の言語は触れるようになりました。特にjavaとUnityでよく使っているC#は得意です。
+                        javaは中学生のときに始めたので5年ほどは使っています。個人的にはC#が最も書きやすいと感じます。C言語は現在勉強中です。<br /><br />
+                        ちなみにこれ以外にもアセンブリ言語やVerilogも勉強したことがありますが最近はほぼ使っていないので省略しました。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script src="chart.js"></script>
+
+        <h1 id="works">WORKS</h1>
+        <div class="row row-cols-auto" style="margin-left: 3em; margin-right: 3em;">
+            <div class="col">
+                <div class="card">
+                    <img src="img/exitit.png" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Exit it!</h5>
+                        <p class="card-text">せまってくる炎から逃げつつ、障害物をよけてハイスコアを目指すゲーム</p>
+                        <a href="https://github.com/atsuto820/Exit-it/releases/tag/v1.0"
+                            class="btn btn-primary">ダウンロード</a>
+                        <a href="https://github.com/atsuto820/Exit-it" class="btn btn-primary">Github</a>
+                        <a href="works/exitit/index.html" class="btn btn-success" style="margin-top: 0.5em;">作品ページへ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="img/syogi.png" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">大局将棋</h5>
+                        <p class="card-text">江戸時代初期に考案された史上最大の将棋</p>
+                        <a href="https://atsuto820.github.io/TaikyokuShogi/" class="btn btn-primary">プレイ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="img/confuse.png" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Con-fuse</h5>
+                        <p class="card-text">導火線のブロックを押したり引いたりして動かし、火を爆弾のもとへと導くアクションパズルゲーム</p>
+                        <a href="https://atsuto820.github.io/TaikyokuShogi/" class="btn btn-primary">プレイ</a>
+                        <a href="works/confuse/index.html" class="btn btn-success">作品ページへ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="img/painter.png" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Super Hyper Paint</h5>
+                        <p class="card-text">レイヤー、塗りつぶしなど機能の多いかなり実用的なペイントツール</p>
+                        <a href="https://github.com/atsuto820/Painter/releases/tag/v1.0"
+                            class="btn btn-primary">ダウンロード</a>
+                        <a href="https://github.com/atsuto820/Painter" class="btn btn-primary">Github</a>
+                        <a href="works/painter/index.html" class="btn btn-success" style="margin-top: 0.5em;">作品ページへ</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="img/cart.png" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">3Dカートゲーム</h5>
+                        <p class="card-text">Scratchで作成した3Dのカートゲーム</p>
+                        <a href="https://scratch.mit.edu/projects/955505052/" class="btn btn-primary">プレイ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
 </body>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Super Hyper Paint</title>
+
+    <style>
+        .navfont {
+            font-family: 'Play';
+        }
+
+        .title {
+            font-family: 'Kanit', sans-serif;
+            font-size: 5em;
+            text-align: center;
+            padding-top: 1em;
+            padding-bottom: 0.5em;
+        }
+
+        .top-image {
+            text-align: center;
+            padding-top: 0.5em;
+            padding-bottom: 3em;
+        }
+
+        h1 {
+            font-family: 'Paytone One';
+            font-size: 64px;
+            text-align: center;
+            color: white;
+            vertical-align: middle;
+            margin-bottom: 1em;
+            padding-top: 0.95em;
+            padding-bottom: 0.5em;
+        }
+
+        .contents {
+            font-family: 'Kanit', sans-serif;
+            font-size: 1.4em;
+            margin-left: 6em;
+            margin-right: 6em;
+            padding-bottom: 0.5em;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .container-side {
+            max-width: 50%;
+        }
+
+        .container-sideimg {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+            flex-flow: column;
+            align-items: center;
+        }
+
+        .container-sideimg img {
+            width: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            text-align: center;
+        }
+
+        .container-play-btn {
+            text-align: center;
+        }
+
+        .play-btn {
+            font-size: 24px;
+            background-color: white;
+            border: 0;
+            width: 300px;
+            height: 60px;
+            margin: 50px;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .play-btn:hover {
+            width: 400px;
+        }
+
+        #navbarToggleExternalContent {
+            padding-top: 50px;
+        }
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body style="background-color:#dedede;">
+    <!-- navbar -->
+    <nav class="navbar navbar-dark fixed-top navfont" style="background-color:#202020;">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0" style="font-size: 30px;">atsuto - works</span>
+
+            <!-- navbarの拡張表示ボタン -->
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- navbarの拡張表示 -->
+    <div class="collapse fixed-top" id="navbarToggleExternalContent" data-bs-theme="dark" style="z-index: 10;">
+        <div class="navfont p-4" style="background-color:#202020;">
+            <a href="../../index.html" style="font-size: 20px; text-decoration: none;"><span
+                style="color: #a1a1a1;">portfolio</span></a><br>
+            <a href="https://github.com/atsuto820" style="font-size: 20px; text-decoration: none;"><span
+                style="color: #a1a1a1;">github</span></a><br>
+            <a href="https://unityroom.com/users/sb2e78vz4xkyi5dhj9f3"
+                style="font-size: 20px; text-decoration: none;"><span
+                style="color: #a1a1a1;">Unityroom</span></a>
+        </div>
+    </div>
+
+    <div id="body" style="width: 1200px; max-width: 90%; background-color:#fcfcfc; margin: 0 auto;">
+        <div class="title">Super Hyper Paint</div>
+
+        <div class="top-image"><img src="img/painter.png" style="width: 800px; max-width: 90%;"></div>
+
+        <div style="text-align: center;">
+            <button class="play-btn" style="color: #3a82f8; border: solid 1px #3a82f8;">ダウンロード</button>
+            <button class="play-btn" style="color: #444444; border: solid 1px #444444;">
+                <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" style="height: 80%;">
+                <span style="vertical-align: middle;">Github</span>
+            </button>
+        </div>
+
+        <div class="contents">
+            <div class="container">
+                <div class="container-side">
+                    <h1>多彩な描画ツール</h1>
+                    <p>描画ツールは次の9種類が使用できます。</p>
+                    <ul>
+                        <li><img src="img/tool/pen.png">ペンツール</li>
+                        <li><img src="img/tool/rainbowPen.png">虹色ペンツール</li>
+                        <li><img src="img/tool/eraser.png">消しゴムツール</li>
+
+                        <li><img src="img/tool/line.png">直線ツール</li>
+                        <li><img src="img/tool/polygon.png">多角形ツール</li>
+                        <li><img src="img/tool/rect.png">長方形ツール</li>
+                        <li><img src="img/tool/circle.png">楕円ツール</li>
+
+                        <li><img src="img/tool/fill.png">塗りつぶしツール</li>
+                        <li><img src="img/tool/text.png">テキストツール</li>
+                        <li><img src="img/tool/stamp.png">スタンプツール</li>
+                    </ul>
+                </div>
+                <div class="container-sideimg">
+                    <img src="img/tools.png">
+                </div>
+            </div>
+        </div>
+
+        <div class="contents">
+            <div class="container">
+                <div class="container-sideimg">
+                    <img src="img/functions.png">
+                </div>
+                <div class="container-side">
+                    <h1>便利な機能</h1>
+                    <p>レイヤー機能、「元に戻す」機能、フィルタ(画像加工)機能など、基本的な機能が使用できます。</p>
+                    <p>また、作成した画像は保存することができ、既存の画像を開くこともできます。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contents">
+            <h1>プログラム</h1>
+            推奨動作環境は下のとおりです。
+            <ul>
+                <li>Windows10以降 64bit</li>
+                <li>JRE 8</li>
+            </ul>
+            <img src="img/image.png" style="display: block; margin: auto; max-width: 100%;">
+        </div>
+    </section>
+</body>

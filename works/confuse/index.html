@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>atsuto - Con-fuse</title>
+
+    <link rel="icon" href="img/icon.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        .navfont {
+            font-family: 'Play';
+        }
+
+        body {
+            background-image: url('img/back.png');
+            background-size: 200px 200px;
+            image-rendering: pixelated;
+        }
+
+        #carouselExample {
+            width: 70%;
+            margin: 0 auto;
+            margin-top: 8em;
+        }
+
+        .logo {
+            text-align: center;
+            padding-top: 5em;
+            padding-bottom: 0.5em;
+        }
+
+        h1 {
+            font-family: 'Kosugi Maru';
+            font-size: 48px;
+            color: white;
+            vertical-align: middle;
+            padding-top: 2em;
+            padding-bottom: 1em;
+        }
+
+        h1 img {
+            image-rendering: pixelated;
+            margin: 0px 20px;
+        }
+
+        .insert-img {
+            display: block;
+            margin: auto;
+            margin-top: 4em;
+        }
+
+        p {
+            color: white;
+            font-size: 24px;
+        }
+
+        .play-box {
+            padding: 10px;
+            background-color: #bbbbbbbb;
+            display: inline-block;
+            border-radius: 10px;
+            outline: solid 2px #ffffff;
+            outline-offset: 3px;
+            margin: 2em 0;
+        }
+
+        .contents {
+            font-family: 'Kosugi Maru';
+            font-size: 1.4em;
+            width: 1000px;
+            max-width: 80%;
+            margin: auto;
+            padding-bottom: 0.5em;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .container-right {
+            max-width: 50%;
+        }
+
+        .container-left {
+            flex: 1;
+            padding: 20px;
+            flex-flow: column;
+        }
+
+        .container-play-btn {
+            text-align: center;
+        }
+
+        .play-btn {
+            text-align: center;
+            width: 78px;
+            transition: 0.2s;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+
+        #navbarToggleExternalContent {
+            padding-top: 50px;
+        }
+
+        .container-overlay {
+            position: fixed;
+            width: 100%;
+            height: calc(100% - 70px);
+            bottom: 0;
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        .overlay {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 34%;
+            background-color: #202020;
+            animation: slideOut 1.2s linear forwards;
+        }
+
+        .block-img {
+            position: relative;
+            image-rendering: pixelated;
+            height: 100%;
+            left: 100%;
+        }
+
+        .player-img {
+            position: relative;
+            image-rendering: pixelated;
+            height: 100%;
+            left: 100%;
+        }
+
+        @keyframes slideOut {
+            to {
+                transform: translateX(-200%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-dark fixed-top navfont" style="background-color:#202020;">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0" style="font-size: 30px;">atsuto - works</span>
+
+            <!-- navbarの拡張表示ボタン -->
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- navbarの拡張表示 -->
+    <div class="collapse fixed-top" id="navbarToggleExternalContent" data-bs-theme="dark" style="z-index: 10;">
+        <div class="navfont p-4" style="background-color:#202020;">
+            <a href="../../index.html" style="font-size: 20px; text-decoration: none;"><span
+                    style="color: #a1a1a1;">portfolio</span></a><br>
+            <a href="https://github.com/atsuto820" style="font-size: 20px; text-decoration: none;"><span
+                    style="color: #a1a1a1;">github</span></a><br>
+            <a href="https://unityroom.com/users/sb2e78vz4xkyi5dhj9f3"
+                style="font-size: 20px; text-decoration: none;"><span style="color: #a1a1a1;">Unityroom</span></a>
+        </div>
+    </div>
+
+    <section>
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/game1.png" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/game2.png" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/game3.png" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/game4.png" class="d-block w-100">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <div class="contents">
+            <h1><img src="img/fire.png">火を爆弾へ導け！</h1>
+            <p>
+                「Con-fuse」は新感覚の2Dアクションパズルゲーム。<br>
+                宝探しをする探検家のティールくんは洞窟の奥底に眠る秘宝を求めて深淵へと足を進める。<br>
+                しかし、洞窟はあちこちが岩で埋もれてしまっているようだ。<br>
+                導火線ブロックを押したり引いたりして、動かすことができる。<br>
+                導火線をつなげて、火を爆弾のもとへ導こう。<br>
+                爆風の先には次なるステージへの道が開かれる。
+            </p>
+            <img class="insert-img" src="img/insert1.png">
+
+            <h1><img src="img/explosion.png">アクション & パズル</h1>
+            <p>
+                導火線をつなげないと火はすぐに燃え尽きてしまう。<br>
+                火を爆弾のもとへと運ぶには素早くブロックを運ぶ必要がある。<br>
+                ただし、ステージを制覇するにはアクションだけでなくひらめきも必要だ。<br>
+                アクションと知恵の融合で難関を乗り越えろ！
+            </p>
+
+            <h1><img src="img/bomb.png">仕掛け満載のステージ</h1>
+            <p>
+                ワープホール、レーザー、そして想像を超えるギミックがプレイヤーを待ち受ける。<br>
+                どのギミックもステージに巧妙に組み込まれていて、次第に難易度が上がっていく。<br>
+                ステージは全部で45ステージ。洞窟の果てに何が待っているのか。
+            </p>
+
+            <h1><img src="img/controller.png">プレイ</h1>
+            <p>
+                ブラウザ上でプレイできます。現在Unityroomで公開中!
+            </p>
+            <div style="text-align: center;">
+                <div class="play-box">
+                    <img src="img/thumbnail.png">
+                    <div style="display: inline-block; vertical-align: middle;">
+                        <img src="img/logo.png" style="display: block; width: 462px; margin-bottom: 20px;">
+                        <a href="https://unityroom.com/games/confuse">
+                            <img src="img/play-btn.png" class="play-btn">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <a href="https://unityroom.com/games/confuse"><button class="play-btn">Unityroomでプレイ</button></a> -->
+            </p>
+        </div>
+
+        <div class="container-overlay">
+            <div class="overlay" style="animation-delay: 0.3s;">
+                <img src="img/block1.png" class="block-img" id="block1">
+                <img src="img/player.png" class="player-img">
+            </div>
+            <div class="overlay" style="top: 33.3%; animation-delay: 0.5s;">
+                <img src="img/block1.png" class="block-img" id="block2">
+                <img src="img/player.png" class="player-img">
+            </div>
+            <div class="overlay" style="bottom: 0; animation-delay: 0.7s;">
+                <img src="img/block1.png" class="block-img" id="block3">
+                <img src="img/player.png" class="player-img">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        for (let i = 0; i < 3; i++) {
+            // ランダムなブロックのパス
+            const randomPath = "img/blocks/block" + (Math.floor(Math.random() * 10) + 1) + ".png";
+
+            // 画像要素にランダムな画像のパスを設定
+            document.getElementById("block" + (i + 1)).src = randomPath;
+        }
+    </script>
+</body>

@@ -4,6 +4,15 @@
     <meta charset="utf-8" />
     <title>Exit it!</title>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru" rel="stylesheet" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <meta name="viewport" content="width=device-width">
+
     <style>
         .navfont {
             font-family: 'Play';
@@ -16,14 +25,16 @@
         }
 
         h1 {
-            font-family: 'Paytone One';
+            font-family: 'Mochiy Pop P One';
+            font-size: 64px;
+            color: white;
             vertical-align: middle;
             margin-left: 2em;
             margin-right: 3em;
             margin-bottom: 1em;
             padding-top: 0.95em;
             padding-left: 2.5em;
-            padding-bottom: 0.5em;
+            padding-bottom: 0.2em;
             background-image: url('img/h.png');
             background-position: 50px 50px;
             background-repeat: no-repeat;
@@ -41,11 +52,13 @@
             display: flex;
         }
 
-        .container-right {
+        .container-side {
             max-width: 50%;
+            padding: 20px;
         }
 
-        .container-left {
+        .container-sidemovie {
+            display: flex;
             flex: 1;
             padding: 20px;
             flex-flow: column;
@@ -75,17 +88,31 @@
         #navbarToggleExternalContent {
             padding-top: 50px;
         }
+
+        .to-top {
+            position: relative;
+            height: 400px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .ground {
+            background-color: #7b7b7b;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        .ground a {
+            font-family: 'Kosugi Maru';
+            font-size: 1.4em;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+        }
     </style>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru" rel="stylesheet" />
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
-<body style="background-color:#a1ceb4;">
+<body style="background-color: #afafaf;">
     <!-- navbar -->
     <nav class="navbar navbar-dark fixed-top navfont" style="background-color:#202020;">
         <div class="container-fluid">
@@ -114,40 +141,141 @@
             </div>
         </div>
 
+        <!-- ページトップ -->
+        <a href="#" id="page-top"></a>
+
         <div class="logo"><img src="img/logo.png"></div>
 
-        <h1 style="font-size: 64px; color:white;">GAME</h1>
+        <h1>概要</h1>
         <div class="contents">
             <div class="container">
-                <div class="container-left">
-                    非常口マークを題材にランゲーム化しました。
-                    せまってくる炎から逃げつつ、障害物をよけてハイスコアを目指そう！
-                    このゲームの最大の特徴は3次元と2次元を切り替える次元切り替えです。
-                    視点を変えればコースも変わります。行き詰まった時は積極的に使っていきましょう。<br><br>
+                <div class="container-side">
+                    <p>
+                        非常口マークを題材にランゲーム化しました。
+                        せまってくる炎から逃げつつ、障害物をよけてハイスコアを目指そう！
+                        このゲームの最大の特徴は3次元と2次元を切り替える次元切り替えです。
+                        視点を変えればコースも変わります。行き詰まった時は積極的に使っていきましょう。
+                    </p>
 
-                    このゲームは2023年度奈良高専祭(2023/11/04～2023/11/05)の展示物として作成した作品です。
-                    Windows版を下のボタンのリンクからダウンロードできます。<br><br>
+                    <p>
+                        このゲームは2023年度奈良高専祭(2023/11/04～2023/11/05)の展示物として作成した作品です。
+                        高専祭に展示しているものではスコア記録、ランキング表示機能を追加しており、
+                        高専祭2日間の間でハイスコアの人の名前が記録されます。
+                    </p>
 
-                    高専祭に展示しているものではスコア記録、ランキング表示機能を追加しており、
-                    高専祭2日間の間でハイスコアの人の名前が記録されます。
+                    <p>
+                        推奨動作環境は以下の通りです。
+                        <ul>
+                            <li>Windows10以降 64bit</li>
+                        </ul>
+                    </p>
+
                     <div class="container-play-btn">
-                        <button class="play-btn" onclick="location.href='https://github.com/atsuto820/Exit-it/releases/tag/v1.0'">ダウンロード</button>
+                        <button class="play-btn" onclick="location.href='https://www.freem.ne.jp/win/game/32044'">ダウンロード</button>
                     </div>
                 </div>
-                <div class="container-right">
+                <div class="container-sidemovie">
                     <video controls src="movie.mp4" width="576" height="360"></video>
                 </div>
             </div>
         </div>
 
-        <h1 style="font-size: 64px; color:white;">PROGRAM</h1>
+        <h1>ゲーム</h1>
+        <div class="contents">
+            <div class="container">
+                <div class="container-side">
+                    <img src="img/game1.png" style="width: 100%">
+                </div>
+                <div class="container-side">
+                    <p>火災発生！絶望している暇もない！</p>
+                    <p>炎の波が迫る中、巧みな動きで障害物をよけ、</p>
+                    <p>炎から逃げよう！</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="container-side">
+                    <img src="img/game2.png" style="width: 100%">
+                </div>
+                <div class="container-side">
+                    <p>道中には多種多様なギミックが仕掛けられている。</p>
+                    <p>穴を飛び越え、フェンスをくぐり、縦横無尽に駆け抜けろ！</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="container-side">
+                    <img src="img/game3.png" style="width: 100%">
+                </div>
+                <div class="container-side">
+                    <p>攻略の鍵は「次元切り替え」だ。</p>
+                    <p>三次元と二次元を切り替えることができる。</p>
+                    <p>視点を変えればコースも変わり、行けなかった場所に行けるようになる。</p>
+                    <p>困ったら積極的に使ってみよう。</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="container-side">
+                    <img src="img/game4.png" style="width: 100%">
+                </div>
+                <div class="container-side">
+                    <p>これはもう普通のランナーゲームじゃない！</p>
+                    <p>次元を超えた挑戦が君を待っている！</p>
+                    <p>果たして君はこの冒険にどこまでのスコアを刻めるのか？</p>
+                    <p>限りない可能性の中、最高の冒険がそこにある！</p>
+                </div>
+            </div>
+        </div>
+
+        <h1>プログラム</h1>
         <div class="contents">
             このゲームはUnityを用いて作成されました。
             プロジェクトファイルは<a href="https://github.com/atsuto820/Exit-it">こちらのGithubレポジトリ</a>で公開しています。<br>
             ソースコードは主に「Assets/Scripts」フォルダ内にあります。3Dモデルや楽曲は自作です。<br><br>
+        </div>
 
-            <a href="1day仕事体験作品提出シート_プログラマー.pdf" download="1day仕事体験作品提出シート_プログラマー.pdf">
-                HAL研究所1day仕事体験作品提出シートPDFファイル</a>
+        <div class="to-top">
+            <img src="img/exit.png" style="position: absolute; bottom: 0; right: 0;">
+            <img src="img/fence.png" style="position: absolute; bottom: 0; right: 50%;">
+            <img src="img/player.png" style="position: absolute; bottom: 0; cursor: pointer;" onmouseover="Jump()" id="player">
+        </div>
+
+        <div class="ground">
+            <a href="#page-top">ページのトップへ</a>
         </div>
     </section>
+
+    <script>
+        const player = document.getElementById("player");
+
+        // ジャンプアニメーション中か
+        let isJump = false;
+
+        function Jump(){
+            if(isJump){
+                return;
+            }
+
+            // ジャンプアニメーションを開始
+            isJump = true;
+            let speed = 15;
+            let y = 0;
+
+            const jumpInterval = setInterval(function(){
+                speed -= 0.5;
+                y += speed;
+
+                if(y < 0){
+                    // アニメーション終了
+                    y = 0;
+                    player.style.bottom = "0";
+                    clearInterval(jumpInterval);
+                    isJump = false;
+                } else {
+                    player.style.bottom = y + "px";
+                }
+            }, 10);
+        }
+    </script>
 </body>
