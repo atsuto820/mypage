@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -37,7 +37,7 @@
         }
 
         h1 {
-            font-family: 'Kosugi Maru';
+            font-family: 'DotGothic16';
             font-size: 48px;
             color: white;
             vertical-align: middle;
@@ -65,14 +65,13 @@
             padding: 10px;
             background-color: #bbbbbbbb;
             display: inline-block;
-            border-radius: 10px;
             outline: solid 2px #ffffff;
             outline-offset: 3px;
             margin: 2em 0;
         }
 
         .contents {
-            font-family: 'Kosugi Maru';
+            font-family: 'DotGothic16';
             font-size: 1.4em;
             width: 1000px;
             max-width: 80%;
@@ -99,13 +98,14 @@
         }
 
         .play-btn {
+            border: 2px solid #444;
+            box-shadow: 0 5px 0 #444;
             text-align: center;
-            width: 78px;
-            transition: 0.2s;
         }
 
         .play-btn:hover {
-            transform: scale(1.1);
+            box-shadow: none;
+            transform: translateY(5px);
         }
 
         #navbarToggleExternalContent {
@@ -142,6 +142,16 @@
             image-rendering: pixelated;
             height: 100%;
             left: 100%;
+        }
+
+        .design-text {
+            font-size: 2em;
+            text-shadow: 
+                0em -0.06em 0 #000,  
+                0em 0.06em 0 #000,
+                -0.06em 0em 0 #000,
+                0.06em 0em 0 #000;
+            color: #f44;
         }
 
         @keyframes slideOut {
@@ -234,22 +244,19 @@
 
             <h1><img src="img/controller.png">プレイ</h1>
             <p>
-                ブラウザ上でプレイできます。現在Unityroomで公開中!
+                現在ブラウザ版とWindows版で公開中で、無料でプレイできます。<br>
+                ブラウザ版は現在Unityroomで、Windows版はふりーむで公開中！
             </p>
             <div style="text-align: center;">
                 <div class="play-box">
                     <img src="img/thumbnail.png">
-                    <div style="display: inline-block; vertical-align: middle;">
-                        <img src="img/logo.png" style="display: block; width: 462px; margin-bottom: 20px;">
-                        <a href="https://unityroom.com/games/confuse">
-                            <img src="img/play-btn.png" class="play-btn">
-                        </a>
+                    <div style="display: inline-block; vertical-align: middle; margin: 0 1em;">
+                        <p class="design-text">今すぐプレイ！</p>
+                        <button class="play-btn" onclick="location.href='https://unityroom.com/games/confuse'">ブラウザ版</button>
+                        <button class="play-btn" onclick="location.href='https://www.freem.ne.jp/win/game/32105'">Windows版</button>
                     </div>
                 </div>
             </div>
-
-            <!-- <a href="https://unityroom.com/games/confuse"><button class="play-btn">Unityroomでプレイ</button></a> -->
-            </p>
         </div>
 
         <div class="container-overlay">
