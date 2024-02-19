@@ -31,8 +31,6 @@
             font-size: 64px;
             color: white;
             vertical-align: middle;
-            margin-left: 2em;
-            margin-right: 3em;
             margin-bottom: 1em;
             padding-top: 0.95em;
             padding-left: 2.5em;
@@ -45,8 +43,9 @@
         .contents {
             font-family: 'Kosugi Maru';
             font-size: 1.4em;
-            margin-left: 3em;
-            margin-right: 3em;
+            width: 1000px;
+            max-width: 90%;
+            margin: auto;
             padding-bottom: 0.5em;
         }
 
@@ -74,8 +73,9 @@
             border: 0;
             background-color: green;
             width: 300px;
+            max-width: 80%;
             height: 60px;
-            margin: 50px;
+            margin: 0 50px;
             color: white;
             border-radius: 10px;
             background-image: linear-gradient(to top left,
@@ -93,8 +93,8 @@
 
         .to-top {
             position: relative;
-            height: 400px;
             max-width: 1000px;
+            height: 400px;
             margin: 0 auto;
         }
 
@@ -110,6 +110,17 @@
             cursor: pointer;
             text-decoration: none;
             color: black;
+        }
+
+        /* スマホ画面用 */
+        @media screen and (max-width: 800px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .container-side {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -129,124 +140,118 @@
         </div>
     </nav>
 
-    <section id="body">
-        <!-- navbarの拡張表示 -->
-        <div class="collapse fixed-top" id="navbarToggleExternalContent" data-bs-theme="dark" style="z-index: 10;">
-            <div class="navfont p-4" style="background-color:#202020;">
-                <a href="../../index.html" style="font-size: 20px; text-decoration: none;"><span
-                    style="color: #a1a1a1;">portfolio</span></a><br>
-                <a href="https://github.com/atsuto820" style="font-size: 20px; text-decoration: none;"><span
-                    style="color: #a1a1a1;">github</span></a><br>
-                <a href="https://unityroom.com/users/sb2e78vz4xkyi5dhj9f3"
-                    style="font-size: 20px; text-decoration: none;"><span
-                    style="color: #a1a1a1;">Unityroom</span></a>
-            </div>
+    <!-- navbarの拡張表示 -->
+    <div class="collapse fixed-top" id="navbarToggleExternalContent" data-bs-theme="dark" style="z-index: 10;">
+        <div class="navfont p-4" style="background-color:#202020;">
+            <a href="../../index.html" style="font-size: 20px; text-decoration: none;"><span
+                style="color: #a1a1a1;">portfolio</span></a><br>
+            <a href="https://github.com/atsuto820" style="font-size: 20px; text-decoration: none;"><span
+                style="color: #a1a1a1;">github</span></a><br>
+            <a href="https://unityroom.com/users/sb2e78vz4xkyi5dhj9f3"
+                style="font-size: 20px; text-decoration: none;"><span
+                style="color: #a1a1a1;">Unityroom</span></a>
         </div>
+    </div>
 
-        <!-- ページトップ -->
-        <a href="#" id="page-top"></a>
+    <!-- ページトップ -->
+    <a href="#" id="page-top"></a>
 
-        <div class="logo"><img src="img/logo.png"></div>
+    <div class="logo"><img src="img/logo.png" style="max-width: 90%;"></div>
 
+    <div class="contents">
         <h1>概要</h1>
-        <div class="contents">
-            <div class="container">
-                <div class="container-side">
-                    <p>
-                        非常口マークを題材にランゲーム化しました。
-                        せまってくる炎から逃げつつ、障害物をよけてハイスコアを目指そう！
-                        このゲームの最大の特徴は3次元と2次元を切り替える次元切り替えです。
-                        視点を変えればコースも変わります。行き詰まった時は積極的に使っていきましょう。
-                    </p>
-
-                    <p>
-                        このゲームは2023年度奈良高専祭(2023/11/04～2023/11/05)の展示物として作成した作品です。
-                        高専祭に展示しているものではスコア記録、ランキング表示機能を追加しており、
-                        高専祭2日間の間でハイスコアの人の名前が記録されます。
-                    </p>
-
-                    <p>
-                        推奨動作環境は以下の通りです。
-                        <ul>
-                            <li>Windows10以降 64bit</li>
-                        </ul>
-                    </p>
-
-                    <div class="container-play-btn">
-                        <button class="play-btn" onclick="location.href='https://www.freem.ne.jp/win/game/32044'">ダウンロード</button>
-                    </div>
-                </div>
-                <div class="container-sidemovie">
-                    <video controls src="movie.mp4" width="576" height="360"></video>
-                </div>
-            </div>
+        <div style="text-align: center; margin-bottom: 1em;">
+            <video controls src="movie.mp4" style="width: 800px; max-width: 100%;"></video>
         </div>
+        <p>
+            非常口マークを題材にランゲーム化しました。
+            せまってくる炎から逃げつつ、障害物をよけてハイスコアを目指そう！
+            このゲームの最大の特徴は3次元と2次元を切り替える次元切り替えです。
+            視点を変えればコースも変わります。行き詰まった時は積極的に使っていきましょう。
+        </p>
 
+        <p>
+            このゲームは2023年度奈良高専祭(2023/11/04～2023/11/05)の展示物として作成した作品です。
+            高専祭に展示しているものではスコア記録、ランキング表示機能を追加しており、
+            高専祭2日間の間でハイスコアの人の名前が記録されます。
+        </p>
+
+        <p>
+            推奨動作環境は以下の通りです。
+            <ul>
+                <li>Windows10以降 64bit</li>
+            </ul>
+        </p>
+
+        <div class="container-play-btn">
+            <button class="play-btn" onclick="location.href='https://www.freem.ne.jp/win/game/32044'">ダウンロード</button>
+        </div>
+    </div>
+
+    <div class="contents">
         <h1>ゲーム</h1>
-        <div class="contents">
-            <div class="container">
-                <div class="container-side">
-                    <img src="img/game1.png" style="width: 100%">
-                </div>
-                <div class="container-side">
-                    <p>火災発生！絶望している暇もない！</p>
-                    <p>炎の波が迫る中、巧みな動きで障害物をよけ、</p>
-                    <p>炎から逃げよう！</p>
-                </div>
+        <div class="container">
+            <div class="container-side">
+                <img src="img/game1.png" style="width: 100%">
             </div>
-
-            <div class="container">
-                <div class="container-side">
-                    <img src="img/game2.png" style="width: 100%">
-                </div>
-                <div class="container-side">
-                    <p>道中には多種多様なギミックが仕掛けられている。</p>
-                    <p>穴を飛び越え、フェンスをくぐり、縦横無尽に駆け抜けろ！</p>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="container-side">
-                    <img src="img/game3.png" style="width: 100%">
-                </div>
-                <div class="container-side">
-                    <p>攻略の鍵は「次元切り替え」だ。</p>
-                    <p>三次元と二次元を切り替えることができる。</p>
-                    <p>視点を変えればコースも変わり、行けなかった場所に行けるようになる。</p>
-                    <p>困ったら積極的に使ってみよう。</p>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="container-side">
-                    <img src="img/game4.png" style="width: 100%">
-                </div>
-                <div class="container-side">
-                    <p>これはもう普通のランナーゲームじゃない！</p>
-                    <p>次元を超えた挑戦が君を待っている！</p>
-                    <p>果たして君はこの冒険にどこまでのスコアを刻めるのか？</p>
-                    <p>限りない可能性の中、最高の冒険がそこにある！</p>
-                </div>
+            <div class="container-side">
+                <p>火災発生！絶望している暇もない！</p>
+                <p>炎の波が迫る中、巧みな動きで障害物をよけ、</p>
+                <p>炎から逃げよう！</p>
             </div>
         </div>
 
+        <div class="container">
+            <div class="container-side">
+                <img src="img/game2.png" style="width: 100%">
+            </div>
+            <div class="container-side">
+                <p>道中には多種多様なギミックが仕掛けられている。</p>
+                <p>穴を飛び越え、フェンスをくぐり、縦横無尽に駆け抜けろ！</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="container-side">
+                <img src="img/game3.png" style="width: 100%">
+            </div>
+            <div class="container-side">
+                <p>攻略の鍵は「次元切り替え」だ。</p>
+                <p>三次元と二次元を切り替えることができる。</p>
+                <p>視点を変えればコースも変わり、行けなかった場所に行けるようになる。</p>
+                <p>困ったら積極的に使ってみよう。</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="container-side">
+                <img src="img/game4.png" style="width: 100%">
+            </div>
+            <div class="container-side">
+                <p>これはもう普通のランナーゲームじゃない！</p>
+                <p>次元を超えた挑戦が君を待っている！</p>
+                <p>果たして君はこの冒険にどこまでのスコアを刻めるのか？</p>
+                <p>限りない可能性の中、最高の冒険がそこにある！</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contents">
         <h1>プログラム</h1>
-        <div class="contents">
-            このゲームはUnityを用いて作成されました。
-            プロジェクトファイルは<a href="https://github.com/atsuto820/Exit-it">こちらのGithubレポジトリ</a>で公開しています。<br>
-            ソースコードは主に「Assets/Scripts」フォルダ内にあります。3Dモデルや楽曲は自作です。<br><br>
-        </div>
+        このゲームはUnityを用いて作成されました。
+        プロジェクトファイルは<a href="https://github.com/atsuto820/Exit-it">こちらのGithubレポジトリ</a>で公開しています。<br>
+        ソースコードは主に「Assets/Scripts」フォルダ内にあります。3Dモデルや楽曲は自作です。<br><br>
+    </div>
 
-        <div class="to-top">
-            <img src="img/exit.png" style="position: absolute; bottom: 0; right: 0;">
-            <img src="img/fence.png" style="position: absolute; bottom: 0; right: 50%;">
-            <img src="img/player.png" style="position: absolute; bottom: 0; cursor: pointer;" onmouseover="Jump()" id="player">
-        </div>
+    <div class="to-top">
+        <img src="img/exit.png" style="position: absolute; bottom: 0; right: 0;">
+        <img src="img/fence.png" style="position: absolute; bottom: 0; right: 50%;">
+        <img src="img/player.png" style="position: absolute; bottom: 0; cursor: pointer;" onmouseover="Jump()" id="player">
+    </div>
 
-        <div class="ground">
-            <a href="#page-top">ページのトップへ</a>
-        </div>
-    </section>
+    <div class="ground">
+        <a href="#page-top">ページのトップへ</a>
+    </div>
 
     <script>
         const player = document.getElementById("player");
